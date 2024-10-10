@@ -1,0 +1,69 @@
+[user]
+email = stefan.b.todorov@gmail.com
+name = Stefan Todorov
+[init]
+defaultBranch = main
+[push]
+autoSetupRemote = true
+[pager]
+diff = riff
+show = riff
+log = riff
+[interactive]
+diffFilter = riff --color=on
+[color]
+diff = auto
+status = auto
+branch = auto
+interactive = auto
+ui = auto
+pager = true
+[alias]
+
+d = diff
+s = status
+w = switch
+a = add
+p = pull
+pu = push
+puo = !git push --set-upstream origin $(git rev-parse --abbrev-ref HEAD)
+
+# merge
+m = merge
+mc = merge --continue
+
+# checkout
+c = checkout
+cb = checkout -b
+
+# branch
+b = branch
+br = !git for-each-ref \
+	--sort=committerdate \
+	refs/heads/ \
+	--format='%(HEAD) %(align:45)%(color:yellow)%(refname:short)%(color:reset)%(end) %(color:red)%(objectname:short)%(color:reset) %(color:green)(%(committerdate:relative))%(color:reset) %(contents:subject)'
+del = branch -d
+
+# commit
+ca = commit --amend
+cam = commit --amend -m
+cm = commit -m
+ac = !git add . && git commit
+acm = !git add . && git commit -m
+
+# log
+lt = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+l = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --no-merges --first-parent
+
+# reset
+undo = reset HEAD~1 --mixed
+rh = reset --hard
+
+# restore
+re = restore
+res = restore --staged
+[filter "lfs"]
+clean = git-lfs clean -- %f
+smudge = git-lfs smudge -- %f
+process = git-lfs filter-process
+required = true

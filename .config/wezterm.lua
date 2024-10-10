@@ -13,48 +13,8 @@ then
     -- config.macos_window_background_blur = 30
 elseif wezterm.target_triple == 'x86_64-unknown-linux-gnu' then
 end
--- {
---     key = 'w',
---     mods = 'CMD',
---     action = wezterm.action.CloseCurrentTab { confirm = true },
--- },
 
--- config.background = {
---     {
---         source = {
---             Color = "#222222"
---         },
---         width = "100%",
---         height = "100%",
---         opacity = 0.97
---     },
---     {
---         source = {
---             Gradient = {
---                 colors = {
---                     "#641a80", "#8c2981", "#b63679", "#641a80", "#8c2981"
---                 },
---                 orientation = { Radial = { radius = 1 } },
---             }
---         },
---         width = "100%",
---         height = "100%",
---         opacity = 0.3
---     },
---     {
---         source = {
---             Gradient = {
---                 colors = { '#000000', '#000000' },
---                 orientation = { Radial = { radius = 3.5 } },
---             }
---         },
---         width = "100%",
---         height = "100%",
---         opacity = 0.05
---     },
--- }
-
-config.color_scheme = 'tokyonight_moon'
+config.color_scheme = 'flexoki-dark'
 config.font = wezterm.font('MonaspiceNe Nerd Font Mono', { weight = 'Regular' })
 config.font_size = 16.0
 config.window_padding = {

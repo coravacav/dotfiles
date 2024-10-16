@@ -2,7 +2,7 @@ local wezterm = require 'wezterm'
 local config = {}
 
 if wezterm.target_triple == 'x86_64-pc-windows-msvc' then
-    config.default_prog = { 'wsl' }
+    config.default_prog = { 'wsl', '~' }
     config.window_background_opacity = 0.9
     config.win32_system_backdrop = 'Tabbed'
 elseif
